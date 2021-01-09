@@ -7,6 +7,433 @@
     <title>My Skills</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/skills.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 200vh;
+}
+.skills{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: rgb(195, 0, 255);
+    font-size: 40px;
+}
+        /* Header new */
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 100000;
+            align-items: center;
+            transition: 0.6s;
+            padding: 20px 10px;
+            border-bottom: 1px solid black;
+        }
+        header .logo{
+            position: relative;
+            font-weight: 700;
+            color: #000;
+            left: 30px;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px; 
+            transition: 0.6s;  
+            /* border: 1px solid black; */
+        }
+        header.sticky{
+           padding: 5px 0;
+           background: black; 
+           color: white;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li{
+            position: relative;
+            list-style: none;
+        }
+        header ul li a{
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: orangered;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.6s;
+        }
+        header.sticky ul li a{
+            color: #fff;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        header.sticky .logo{
+            color: #fff;
+        }
+        .mainMenu{
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        .mainMenu li a{
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            font-size: 1.2rem;
+        }
+        .mainMenu li a:hover{
+            background: rgb(255, 94, 0);
+        }
+        .openMenu{
+            font-size: 2rem;
+            margin: 10px;
+            display: none;
+            cursor: pointer;
+        }
+        .closeMenu{
+            display: none;
+            cursor: pointer;
+        }
+        /* Header end */
+
+#hero-section{
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.col-left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    /* New animation */
+    p{
+        margin: 0;
+        line-height: 1.5;
+        font-size: 19px;
+        text-align: justify;
+    }
+    p:not(:last-child){
+        margin-bottom: 1.5rem;
+    }
+    a{
+        text-decoration: none;
+    }
+    /* .page{
+        min-height: 100vh;
+        display: flex;
+    } */
+    .page-container{
+        max-width: 1200px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: auto;
+    }
+    #popup-article:target{
+        display: flex;
+    }
+    .open-popup{
+        color: black;
+        text-transform: uppercase;
+        padding: 8px 22px;
+        font-size: 20px;
+        border: 3px solid black;
+        border-radius: 50px;
+        font-weight: bolder;
+        position: relative;
+        top: 40px;
+        left: 71px;
+    }
+    /* .pen-popup:hover{
+        background: black;
+        color: #fff;
+    }o */
+    .popup{
+        width: 100%;
+        height: 100vh;
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000000;
+        scrollbar-color: white;
+        color: white;
+    }
+    .popup::before{
+        content: '';
+        box-sizing: border-box;
+        width: 100%;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        will-change: height, top;
+        animation: open-animation 0.6s cubic-bezier(0.83, 0.04, 0, 1.16) 0.65s both;
+    }
+    .popup::after{
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: black;
+        will-change: width, opacity;
+        animation: line-animation 1s cubic-bezier(0.83, 0.04, 0, 1.16) both;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+    }
+    @keyframes line-animation{
+        0%{
+            width: 0;
+            opacity: 1;
+        }
+        99%{
+            width: 100%;
+            opacity: 1;
+        }
+        100%{
+            width: 100%;
+            opacity: 0;
+        }
+    }
+    @keyframes open-animation{
+        0%{
+            height: 0;
+            top: 50%;
+        }
+        100%{
+            height: 100vh;
+            top: 0;
+        }
+    }
+    .page-container a:hover{
+        background: #fff;
+        color: black;
+        transition: .3s ease-in-out;
+    }
+    .popup-block{
+            height: calc(100vh - 40px);
+            padding: 5% 15%;
+            box-sizing: border-box;
+            position: relative;
+            margin: auto;
+            overflow: auto;
+            animation: fade 1.3s ease-out 1.3s both;
+    }
+    @keyframes fade{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .popup-close{
+        width: 3.2rem;
+        height: 3.2rem;
+        text-indent: -9999px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-image: url(../images/close.png);
+    }
+    button{
+        border: 2px solid white;
+        background: transparent;
+        color: white;
+        padding: 16px 36px;
+        border-radius: 50px;
+    }
+    button:hover{
+        color: black;
+        background: white;
+        transition: .6s ease-in-out;
+        cursor: pointer;
+    }
+    /* Animation ends here */
+        /* New Col-left */
+        .col-left h2{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 50px;
+            padding-left: 94px;
+        }
+        .col-left b{
+            color: rgb(255, 82, 29);
+        }
+.btn{
+    width: 100%;
+    padding-left: 100px;
+}
+.btn button{
+    background: none;
+    /* border: 3px solid pink; */
+    border: 3px solid rgb(194, 0, 253);
+    outline: none;
+    width: 140px;
+    height: 50px;
+    font-size: 25px;
+    color: rgb(194, 0, 253);
+    cursor: pointer;
+    font-weight: bolder;
+}
+.btn button:hover{
+    /* background: pink; */
+    background: rgb(194, 0, 253);
+    transition: .5s ease-in-out;
+    color: white;
+}
+        /* Animation for my name */
+    #b1{
+        color: rgb(251, 255, 0);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b2:hover{
+        color: rgba(255, 119, 119, 0.973);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b3:hover{
+        color: rgb(95, 202, 252);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b4:hover{
+        color: rgb(212, 0, 255);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b5:hover{
+        color: rgb(135, 147, 250);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b6:hover{
+        color: orangered;
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+    #b7:hover{
+        color: rgb(255, 196, 0);
+        font-size: 1.3em;
+        transition: .3s ease-in-out;
+    }
+        /* Animation Ends here */
+.col-right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* background: rgba(255, 215, 215, 0.973); */
+    }
+.col-right img{
+    width: 500px;
+    transform: scalex(-1);
+}
+#section-2{
+    width: 100%;
+    height: 100vh;
+    /* background: linear-gradient(60deg,rgb(255, 6, 255),purple,rgb(104, 25, 104)); */
+}
+.content{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: rgb(2, 141, 255);
+    flex-direction: column;
+}
+@media (max-width: 800px){
+    .mainMenu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        transition: top 1s ease-in-out;
+        display: none;
+    }
+    .col-left{
+        width: 100%;
+        justify-content: center;
+        /* align-items: center; */
+    }
+    .col-left h2{
+        font-size: 30px;
+    }
+    .content{
+        font-size: 30px;
+    }
+    .col-right img{
+        display: none;
+    }
+    header.sticky li a:hover{
+        background: none;
+        color: rgb(255, 94, 0);
+        font-size: 1.4rem;
+    }
+    .mainMenu li a{
+        color: #fff;
+    }
+    .mainMenu .closeMenu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .openMenu{display: block;}
+    .mainMenu li a:hover{
+        background: none;
+        color: rgb(255, 94, 0);
+        font-size: 1.4rem;
+    }
+    .logo{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+    </style>
 </head>
 
 <body>
