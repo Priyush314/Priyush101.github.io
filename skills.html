@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- <nav> -->
+        <a href="#" class="logo">PPSNext</a>
+        <div class="openMenu">
+            <img src="images/menu.png" alt="Open Menu">
+        </div>
+        <ul class="mainMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">my Skills</a></li>
+            <li><a href="#">Contact me</a></li>
+            <div class="closeMenu">
+                <img src="images/close.png" alt="Close Menu">
+            </div>
+        </ul>
+        <!-- </nav> -->
+    </header>
+    <div class="skills">
+        <h1>This page is under Construction</h1>
+    </div>
+
+
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+</body>
+
+</html>

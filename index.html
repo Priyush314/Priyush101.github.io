@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyush The Front-end Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- <nav> -->
+        <a href="#" class="logo">PPSNext</a>
+        <div class="openMenu">
+            <img src="images/menu.png" alt="Open Menu">
+        </div>
+        <ul class="mainMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">my Skills</a></li>
+            <li><a href="#">Contact me</a></li>
+            <div class="closeMenu">
+                <img src="images/close.png" alt="Close Menu">
+            </div>
+        </ul>
+        <!-- </nav> -->
+    </header>
+    <main>
+        <section id="hero-section">
+            <div class="container">
+                <div class="col-left">
+                    <h2>I'm <b>Priyush</b> </h2>
+                    <h2>A Front-end Developer</h2>
+                    <!-- <h1>Develop tomorrow</h1>
+                    <h2>With me</h2>
+                    <h3><b id="b1">P</b><b id="b2">r</b><b id="b3">i</b><b id="b4">y</b><b id="b5">u</b><b
+                            id="b6">s</b><b id="b7">h</b></h3>
+                    <div class="btn">
+                        <button>HIRE ME</button>
+                    </div> -->
+                    <div class="page">
+                        <div class="page-container">
+                            <a href="#popup-article" class="open-popup">Get Started</a>
+                        </div>
+                    </div>
+                    <div id="popup-article" class="popup">
+                        <div class="popup-block">
+                            <h1 class="popup-title">
+                                Do Whatever You Love!
+                            </h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe corrupti incidunt
+                                debitis voluptates
+                                nobis repellendus error dolore. Aperiam, suscipit excepturi? Vel dolores repellat minima
+                                tempore, quidem
+                                eos consequatur animi facilis, tenetur quo inventore dolorum quos qui, distinctio nulla.
+                                Totam fugiat
+                                culpa ratione voluptas laborum repudiandae recusandae doloremque sapiente illo!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam optio quas perferendis
+                                eveniet dolore
+                                vel, magni aspernatur, sit assumenda corporis similique debitis. Ab ipsa, esse sed
+                                facilis reprehenderit
+                                totam inventore.</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit officiis repellendus,
+                                dolores
+                                praesentium ipsam atque corporis asperiores beatae necessitatibus, nihil minus fuga modi
+                                accusamus.
+                                Consectetur eius deleniti dolore pariatur repellat tempora atque, nihil, possimus
+                                distinctio nemo animi
+                                tempore? Numquam, ad nobis! Tenetur aut eos iure nam! Sapiente illum a excepturi?</p>
+                            <br>
+                            <button>Get Started</button>
+                            <a href="" class="popup-close">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <img src="images/undraw_Code_review_re_woeb.svg" alt="Error Loading Image">
+                </div>
+            </div>
+        </section>
+        <hr height="10px" color="orangered">
+        <section id="section-2">
+            <div class="content">
+                <h1>The Website is Under Construction</h1><br>
+                <h2>So, Please Wait.....</h2>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        })
+    </script>
+</body>
+
+</html>
